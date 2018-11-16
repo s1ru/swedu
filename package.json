@@ -1,0 +1,15 @@
+{
+  "name": "ubuntu_server_jw",
+  "version": "1.0.0",
+  "description": "Web Server Practice",
+  "main": "app7.js",
+  "dependencies": {
+    "node-mysql": "^0.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

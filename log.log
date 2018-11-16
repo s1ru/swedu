@@ -1,0 +1,154 @@
+Conneted 8000 port!
+Access Process Search
+[]
+Conneted 8000 port!
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 6;
+result:
+[]
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 4;
+result:
+[ RowDataPacket { name: '123' }, RowDataPacket { name: '123' } ]
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 6;
+result:
+[]
+Access Process Search
+SELECT name FROM applicant WHERE name = 123123 AND phone = 6;
+result:
+[]
+Conneted 8000 port!
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 4;
+result:
+[ RowDataPacket { name: '123' }, RowDataPacket { name: '123' } ]
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 41;
+result:
+[]
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 41111;
+result:
+[]
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 4;
+result:
+[ RowDataPacket { name: '123' }, RowDataPacket { name: '123' } ]
+Conneted 8000 port!
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 1234 AND phone = 4;
+result:
+[ RowDataPacket { 'count(*)': 0 } ]
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 123 AND phone = 4;
+result:
+[ RowDataPacket { 'count(*)': 2 } ]
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 123 AND phone = 4;
+result:
+[ RowDataPacket { 'count(*)': 2 } ]
+Conneted 8000 port!
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 123 AND phone = 5;
+result:
+[ RowDataPacket { 'count(*)': 0 } ]
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 123 AND phone = 4;
+result:
+[ RowDataPacket { 'count(*)': 2 } ]
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 1231233 AND phone = 4;
+result:
+[ RowDataPacket { 'count(*)': 0 } ]
+Conneted 8000 port!
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 123 AND phone = 55;
+result:
+[ RowDataPacket { 'count(*)': 0 } ]
+RowDataPacket { 'count(*)': 0 }
+[ FieldPacket {
+    catalog: 'def',
+    db: '',
+    table: '',
+    orgTable: '',
+    name: 'count(*)',
+    orgName: '',
+    charsetNr: 63,
+    length: 21,
+    type: 8,
+    flags: 129,
+    decimals: 0,
+    default: undefined,
+    zeroFill: false,
+    protocol41: true } ]
+Conneted 8000 port!
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 123 AND phone = 55;
+result:
+[ RowDataPacket { 'count(*)': 0 } ]
+undefined
+[ FieldPacket {
+    catalog: 'def',
+    db: '',
+    table: '',
+    orgTable: '',
+    name: 'count(*)',
+    orgName: '',
+    charsetNr: 63,
+    length: 21,
+    type: 8,
+    flags: 129,
+    decimals: 0,
+    default: undefined,
+    zeroFill: false,
+    protocol41: true } ]
+Access Process Search
+SELECT count(*) FROM applicant WHERE name = 123 AND phone = 4;
+result:
+[ RowDataPacket { 'count(*)': 2 } ]
+undefined
+[ FieldPacket {
+    catalog: 'def',
+    db: '',
+    table: '',
+    orgTable: '',
+    name: 'count(*)',
+    orgName: '',
+    charsetNr: 63,
+    length: 21,
+    type: 8,
+    flags: 129,
+    decimals: 0,
+    default: undefined,
+    zeroFill: false,
+    protocol41: true } ]
+Conneted 8000 port!
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 4;
+result:
+[ RowDataPacket { name: '123' }, RowDataPacket { name: '123' } ]
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 411;
+result:
+[]
+Conneted 8000 port!
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 4;
+result:
+2
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 44;
+result:
+0
+Conneted 8000 port!
+Access Process Application
+Conneted 8000 port!
+Access Process Search
+SELECT name FROM applicant WHERE name = 1 AND phone = 3;
+result:
+0
+Access Process Search
+SELECT name FROM applicant WHERE name = 1 AND phone = 2;
+result:
+1
