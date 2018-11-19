@@ -116,7 +116,7 @@
 							<td class="col1"><label id="contentsText">보호자 휴대전화번호</label></td>
 							<td class="col2" colspan="2">
 								<div class="ui input">
-									<input class="inputbox" type="text" name="phone" />
+									<input  type="tel" name="phone" maxlength="11"/>
 								</div>
 							</td>
 							<td></td>
@@ -134,7 +134,10 @@
                                                         <td class="col1"><label id="contentsText">학년</label></td>
                                                         <td class="col2" colspan="2">
                                                                 <div class="ui input">
-                                                                        <input class="inputbox" type="text" name="grade" />
+									<input type="radio" name="grade" value="3" />3학년<br>
+									<input type="radio" name="grade" value="4" />4학년<br>
+									<input type="radio" name="grade" value="5" />5학년<br>
+									<input type="radio" name="grade" value="6" />6학년<br>
                                                                 </div>
                                                         </td>
                                                         <td></td>
@@ -143,7 +146,7 @@
                                                         <td class="col1"><label id="contentsText">이전의 프로그래밍 교육, 캠프, 피지컬 컴퓨팅 캠프 등 소프트웨어 교육 수강 경험횟수</label></td>
                                                         <td class="col2" colspan="2">
                                                                 <div class="ui input">
-                                                                        <input class="inputbox" type="text" name="sw_edu_exp" />
+                                                                        <input class="inputbox" type="number" name="sw_edu_exp" />
                                                                 </div>
                                                         </td>
                                                         <td></td>
@@ -152,7 +155,7 @@
                                                         <td class="col1"><label id="contentsText">이전의 스크래치, 엔트리 등 블록형 컴퓨터언어 학습 경험횟수</label></td>
                                                         <td class="col2" colspan="2">
                                                                 <div class="ui input">
-                                                                        <input class="inputbox" type="text" name="coding_exp" />
+                                                                        <input class="inputbox" type="number" name="coding_exp" />
                                                                 </div>
                                                         </td>
                                                         <td></td>

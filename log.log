@@ -152,3 +152,75 @@ Access Process Search
 SELECT name FROM applicant WHERE name = 1 AND phone = 2;
 result:
 1
+Conneted 8000 port!
+Access Process Search
+{ Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND phone =' at line 1
+    at Query.Sequence._packetToError (/home/ubuntu/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ubuntu/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ubuntu/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ubuntu/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ubuntu/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ubuntu/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ubuntu/node_modules/mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    --------------------
+    at Protocol._enqueue (/home/ubuntu/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/home/ubuntu/node_modules/mysql/lib/Connection.js:200:25)
+    at /home/ubuntu/Node_SW_dir/app.js:67:20
+    at Layer.handle [as handle_request] (/home/ubuntu/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/node_modules/express/lib/router/index.js:275:10)
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage: 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'AND phone =\' at line 1',
+  sqlState: '42000',
+  index: 0,
+  sql: 'SELECT name FROM applicant WHERE name =  AND phone = ;' }
+Access Process Application
+{ Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: '' for column 'grade' at row 1
+    at Query.Sequence._packetToError (/home/ubuntu/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/home/ubuntu/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/home/ubuntu/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/home/ubuntu/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/home/ubuntu/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/home/ubuntu/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/home/ubuntu/node_modules/mysql/lib/Connection.js:502:10)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    --------------------
+    at Protocol._enqueue (/home/ubuntu/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Connection.query (/home/ubuntu/node_modules/mysql/lib/Connection.js:200:25)
+    at /home/ubuntu/Node_SW_dir/app.js:44:20
+    at Layer.handle [as handle_request] (/home/ubuntu/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/ubuntu/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/ubuntu/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/ubuntu/node_modules/express/lib/router/index.js:275:10)
+  code: 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD',
+  errno: 1366,
+  sqlMessage: 'Incorrect integer value: \'\' for column \'grade\' at row 1',
+  sqlState: 'HY000',
+  index: 0,
+  sql: 'INSERT INTO applicant (name,phone,school,grade,sw_education_exp, coding_exp, motivation) values (\'\',\'\',\'\',\'\',\'\',\'\',\'\')' }
+Accese home
+Accese home
+Accese home
+Accese home
+Accese home
+Accese home
+Accese home
+Access Process Search
+SELECT name FROM applicant WHERE name = 123 AND phone = 4;
+result:
+2
+Access Process Application
+Conneted 8000 port!
