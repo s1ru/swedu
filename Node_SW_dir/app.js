@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
 	password: '1111',
 	database: 'myDB'
 });
-*/	
+*/
 app.use(express.static('../public'));
 app.use(bodyParser.urlencoded({ extended : false }));
 
@@ -25,8 +25,8 @@ app.post('/process/application', function(req, res){
 	console.log('Access Process Application');
 	var connection = mysql.createConnection({
        		host: 'localhost',
-        	user: 'web',
-        	password: '1111',
+        	user: 'root',
+        	password: 'ggok1234',
         	database: 'myDB',
 	});
 	connection.connect();
@@ -54,8 +54,8 @@ app.post('/process/search', function(req, res){
         console.log('Access Process Search');
         var connection = mysql.createConnection({
                 host: 'localhost',
-                user: 'web',
-                password: '1111',
+                user: 'root',
+                password: 'ggok1234',
                 database: 'myDB',
         });
         connection.connect();
@@ -66,7 +66,7 @@ app.post('/process/search', function(req, res){
         //var params = ['Jddddaongwook', '01063302476','서울해광동초등학교' ,4,0,1,'열심히할게요' ];
         connection.query(sql, function(err,rows, fields ){
                 if(err) { console.log(err) }
-                else 	{ 
+                else 	{
 			console.log(sql); console.log("result:"); console.log(rows.length);
 			if (rows.length == 0)  res.send('해당 이름의 신청자는 없습니다.');
 			else if (rows.length == 1) res.send('교육신청이 이미 접수 되었습니다.');
@@ -86,9 +86,9 @@ router.route('/process/formResponse').post(function(req, res) {
 
 	var paramId = req.body.id || req.query.id;
 	var paramPassword = req.body.password || req.query.password;
-	
+
 	if (req.session.user) {
-		
+
 		res.redirect('/public/product.html');
 	} else {
 		// 세션 저장
@@ -97,7 +97,7 @@ router.route('/process/formResponse').post(function(req, res) {
 			name: '이름',
 			authorized: true
 		};
-		
+
 		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
 		res.write('<h1>로그인 성공</h1>');
 		res.write('<div><p>Param id : ' + paramId + '</p></div>');
@@ -106,6 +106,6 @@ router.route('/process/formResponse').post(function(req, res) {
 		res.end();
 	}
 }); */
-app.listen(8000, function(){
-    console.log('Conneted 8000 port!');
+app.listen(3000, function(){
+    console.log('Conneted 3000 port!');
 });
