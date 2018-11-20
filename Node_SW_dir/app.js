@@ -69,10 +69,19 @@ app.post('/process/search', function(req, res){
                 if(err) { console.log(err) }
                 else 	{
 			console.log(sql); console.log("result:"); console.log(rows.length);
-			if (rows.length == 0)  res.send('해당 이름의 신청자는 없습니다.');
-			else if (rows.length == 1) res.send('교육신청이 이미 접수 되었습니다.');
-			else  res.send('교육신청이 이미 '+ rows.length +'회 접수 되었습니다.');
-
+			if(rows.length == 0) { //res.send('해당 이름의 신청자는 없습니다.');
+			res.writeHead(200,{'Content-Type':'text/html; charset=utf8'});
+				res.write( '<a href=/form_sweduday.html> 홈페이지로 돌아가기 </a>');
+			res.end();
+			}
+			else if(rows.length == 1){ res.send('교육신청이 이미 접수 되었습니다.');
+			res.write( '<a href=/form_sweduday> 홈페이지로 돌아가기 </a>');
+				res.end();
+			}
+			else { res.send('교육신청이 이미 '+ rows.length +'회 접수 되었습니다.');
+			res.write( '<a href=/form_sweduday> 홈페이지로 돌아가기 </a>');
+				res.end()
+			}
 		}
         });
         connection.end();
