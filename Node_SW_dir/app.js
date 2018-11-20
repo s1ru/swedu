@@ -47,7 +47,11 @@ app.post('/process/application', function(req, res){
         });
         connection.end();
 
-    res.send('Success Application !! '+params);
+   // res.send('Success Application !! '+params);
+	res.writeHead(200,{'Content-Type':'text/html; charset=utf8'});
+      	res.write('<h1>접수되었습니다.</h1>');
+	res.write( '<a href=/SW_Edu_Day.html> 홈페이지로 돌아가기 </a>');
+    res.end();
 });
 
 app.post('/process/search', function(req, res){
@@ -69,18 +73,18 @@ app.post('/process/search', function(req, res){
                 if(err) { console.log(err) }
                 else 	{
 			console.log(sql); console.log("result:"); console.log(rows.length);
-			if(rows.length == 0) { //res.send('해당 이름의 신청자는 없습니다.');
+			if(rows.length == 0) {
 			res.writeHead(200,{'Content-Type':'text/html; charset=utf8'});
-				res.write( '<a href=/form_sweduday.html> 홈페이지로 돌아가기 </a>');
+				res.write('<h1>신청 내역이 없습니다.</h1>');
+				res.write( '<a href=/SW_Edu_Day.html> 홈페이지로 돌아가기 </a>');
 			res.end();
 			}
-			else if(rows.length == 1){ res.send('교육신청이 이미 접수 되었습니다.');
-			res.write( '<a href=/form_sweduday> 홈페이지로 돌아가기 </a>');
-				res.end();
-			}
-			else { res.send('교육신청이 이미 '+ rows.length +'회 접수 되었습니다.');
-			res.write( '<a href=/form_sweduday> 홈페이지로 돌아가기 </a>');
-				res.end()
+			else{
+			res.writeHead(200,{'Content-Type':'text/html; charset=utf8'});
+				res.write('<h1>이미신청되었습니다.</h1>');
+				res.write( '<a href=/SW_Edu_Day.html> 홈페이지로 돌아가기 </a>');
+			res.end();
+			
 			}
 		}
         });
