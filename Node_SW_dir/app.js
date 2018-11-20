@@ -43,7 +43,7 @@ app.post('/process/application', function(req, res){
 	//var params = ['Jongwook', '01063302476','서울해광동초등학교' ,4,0,1,'열심히할게요' ];
         connection.query(sql,params, function(err,rows, fields ){
                 if(err) { console.log(err) }
-                else { console.log(lows) }
+                else { console.log(rows) }
         });
         connection.end();
 
@@ -62,7 +62,8 @@ app.post('/process/search', function(req, res){
         var paramName = req.body.name,
                 paramPhone = req.body.phone;
         //var params = [paramName,paramPhone];
-        var sql = 'SELECT name FROM applicant WHERE name = '+ paramName + ' AND phone = '+paramPhone+';';
+        //var sql = 'SELECT name FROM applicant WHERE name = '+ paramName + ' AND phone = '+paramPhone+';';
+	var sql = "SELECT name FROM applicant WHERE name = '"+  paramName + "' AND phone = '"+ paramPhone+"';";
         //var params = ['Jddddaongwook', '01063302476','서울해광동초등학교' ,4,0,1,'열심히할게요' ];
         connection.query(sql, function(err,rows, fields ){
                 if(err) { console.log(err) }
