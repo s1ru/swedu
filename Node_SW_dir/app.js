@@ -115,7 +115,7 @@ app.post('/process/teacher', function(req, res){
     paramMotivation = req.body.motivation;
 
 	var params = [paramName,paramPhone,paramSchool,paramMotivation];
-	var sql = 'INSERT INTO teacher (name,phone,school) values (?,?,?)';
+	var sql = 'INSERT INTO teacher (name,phone,school,motivation) values (?,?,?,?)';
 	//var params = ['Jongwook', '01063302476','서울해광동초등학교' ];
         connection.query(sql,params, function(err,rows, fields ){
                 if(err) { console.log(err) }
@@ -132,7 +132,7 @@ app.post('/process/teacher', function(req, res){
 //교사 접수 사이트 끝
 
 //교사 접수 확인 사이트
-app.post('/process/search', function(req, res){
+app.post('/process/search_teacher', function(req, res){
         console.log('Access Process Search');
         var connection = mysql.createConnection({
                 host: 'localhost',
