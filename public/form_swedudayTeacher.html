@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
+		<title>[소프트웨어 교육 DAY] '3D프린터' 체험교육 신청</title>
+
+		<link href="./semantic.min.css" rel="stylesheet" >
+
+		<style>
+			* {
+				padding:0;
+				margin:0;
+				box-sizing:border-box;
+			}
+
+			html {
+				width:100%;
+				height:100%;
+			}
+
+			body {
+				width:100%;
+				height:100%;
+				color: #000;
+				background-color: #fff;
+			}
+
+			.container {
+				width:100%;
+				height:100%;
+				display:flex;
+				flex-flow:column wrap;
+				align-items:center;
+				justify-content:center;
+			}
+
+			#cardbox {
+				width:70%;
+			}
+
+			#iconImage {
+				display:inline;
+			}
+
+			#titleText {
+				font-size:1.4em;
+				font-weight:bold;
+				color:#888;
+			}
+
+			#contentsText {
+				color:#999;
+			}
+
+			#form1 {
+				padding:1em;
+			}
+
+			.row {
+				height:3em;
+			}
+
+			.col1 {
+				width:18em;
+			}
+
+			.inputbox {
+				width:20em;
+			}
+
+			#buttonContainer {
+				padding-top:0.6em;
+				text-align:right;
+			}
+
+		</style>
+
+		<script src="./jquery-3.1.1.min.js"></script>
+		<script src="./semantic.min.js"></script>
+		<script>
+			$(function() {
+				$('.ui.checkbox').checkbox();
+			});
+		</script>
+
+
+	</head>
+	<body>
+
+		<div class="container">
+
+			<div id="cardbox" class="ui blue fluid card">
+				 <div class="content">
+					<div>
+						<div id="titleText" class="header">신청자 정보입력</div>
+	   					<div id="contentsText" class="description">
+<br>
+									 <b>신청 후에는 수정 및 취소가 되지 않습니다. 신청 전 신청 정보를 확인해주세요.</b>
+
+					    </div>
+					</div>
+				 </div>
+
+				<form id="form1" method="post" action="/process/teacher">
+					<table>
+						<tr class="row">
+							<td class="col1"><label id="contentsText">이름</label></td>
+							<td class="col2" colspan="2">
+								<div class="ui input">
+									<input class="inputbox" style='width:70px;height:20px;' type="text" required name="name" />
+								</div>
+							</td>
+							<td></td>
+						</tr>
+						<tr class="row">
+							<td class="col1"><label id="contentsText">휴대전화번호</label></td>
+							<td class="col2" colspan="2">
+								<div class="ui input">
+									<input class="inputbox" style='width:90px;height:20px;'type="text" required maxlength="11" name="phone">
+									* <font color="gray">하이픈(-)은 제외하고 숫자만 입력해주세요. </font>
+
+
+
+								</div>
+							</td>
+							<td></td>
+						</tr>
+						<tr class="row">
+							<td class="col1"><label id="contentsText">소속 초등학교</label></td>
+                <td class="col2" colspan="2">
+                        <div class="ui input">
+																<input class="inputbox" required style='width:70px;height:20px;' type="text" name="school" />
+																	초등학교
+												</div>
+                </td>
+                <td></td>
+                                                </tr>
+
+						<tr class="row">
+                <td class="col1"><label id="contentsText">신청 동기 (간단히 적어주세요)</label></td>
+                <td class="col2" colspan="2">
+                        <div class="ui input">
+        									<input class="inputbox" type="textarea" required rows="2" cols="20" name="motivation" />
+                        </div>
+                </td>
+                <td></td>
+        </tr>
+
+
+						<tr valign="baseline">
+							<td></td>
+							<td id="buttonContainer" align="right"><input id="submitButton" class="ui primary button" type="submit" value="교육 신청" name="" /></td>
+						</tr>
+					</table>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</body>
+</html>

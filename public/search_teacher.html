@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>교육 신청 확인</title>
+	</head>
+<body>
+	<h1>[소프트웨어 교육 DAY] 교육 신청 확인 페이지</h1>
+	<br>
+	<form method="post" action="/process/search">
+		<h2>11.30 접수마감후 추첨을 통해 교육대상자를 발표합니다.</h2>
+		<table>
+			<tr>
+				<td><label>학생 이름</label></td>
+				<td><input type="text" name="name" /></td>
+			</tr>
+			<tr>
+				<td><label>보호자 휴대폰 번호</label></td>
+				<td><input type="tel" name="phone" maxlength="11"/></td>
+			</tr>
+		</table>
+		<input type="submit" value="전송" name=""/>
+	</form>
+</body>
+</html>
