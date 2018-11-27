@@ -173,37 +173,6 @@ app.post('/process/search_teacher', function(req, res){
 
 //교사 접수확인 사이트 끝
 
-//마스터 페이지 시작
-
-app.post('/process/master', function(req, res){
-        console.log('Access Process Search');
-        var connection = mysql.createConnection({
-                host: 'localhost',
-                user: 'root',
-                password: 'ggok1234',
-                database: 'myDB',
-        });
-connection.connect();
-
-connection.query('SELECT * from teacher', function(err, rows, fields) {
-  if (!err)
-    console.log('teacher: ', rows);
-  else
-    console.log('Error while performing Query.', err);
-});
-
-connection.query('SELECT * from applicant', function(err, rows, fields) {
-  if (!err)
-    console.log('applicant: ', rows);
-  else
-    console.log('Error while performing Query.', err);
-});
-
-connection.end();
-//마스터 페이지 끝
-
-
-
 
 
 var router = express.Router();
