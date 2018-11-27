@@ -174,17 +174,13 @@ app.post('/process/search_teacher', function(req, res){
 //교사 접수확인 사이트 끝
 
 
-
 var router = express.Router();
 /*
 router.route('/process/formResponse').post(function(req, res) {
 	console.log('/process/formResponse 호출됨.');
-
 	var paramId = req.body.id || req.query.id;
 	var paramPassword = req.body.password || req.query.password;
-
 	if (req.session.user) {
-
 		res.redirect('/public/product.html');
 	} else {
 		// 세션 저장
@@ -193,7 +189,6 @@ router.route('/process/formResponse').post(function(req, res) {
 			name: '이름',
 			authorized: true
 		};
-
 		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
 		res.write('<h1>로그인 성공</h1>');
 		res.write('<div><p>Param id : ' + paramId + '</p></div>');
