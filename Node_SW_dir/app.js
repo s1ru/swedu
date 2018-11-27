@@ -182,8 +182,8 @@ app.post('/process/admin', function(req, res){
         } else {
                 var connection = mysql.createConnection({
                         host: 'localhost',
-                        user: 'web',
-                        password: '1111',
+                        user: 'root',
+                        password: 'ggok1234',
                         database: 'myDB',
                 });
                 connection.connect();
