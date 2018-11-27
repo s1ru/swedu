@@ -173,30 +173,45 @@ app.post('/process/search_teacher', function(req, res){
 
 //교사 접수확인 사이트 끝
 
+//admin 사이트 시작
+app.post('/process/admin', function(req, res){
+        console.log('Access Admin Page');
+        var paramPassword = req.body.password; //|| req.query.password;
+        if( paramPassword != '2509' ){
+                res.send('틀린 비밀번호');
+        } else {
+                var connection = mysql.createConnection({
+                        host: 'localhost',
+                        user: 'web',
+                        password: '1111',
+                        database: 'myDB',
+                });
+                connection.connect();
+                var sql = "SELECT * FROM applicant";
+                connection.query(sql, function(err,rows, fields ){
+                        if(err) { console.log(err) }
+                        else    {
+                                console.log(sql);
+                                res.send(rows);
+                        }
+                });
+                var sqls = "SELECT * FROM teacher";
+                connection.query(sqls, function(err,rows, fields ){
+                        if(err) { console.log(err) }
+                        else    {
+                                console.log(sql);
+                                res.send(rows);
+                        }
+                });
+
+                connection.end();
+        }
+});
+//admin 사이트 끝
+
 
 var router = express.Router();
-/*
-router.route('/process/formResponse').post(function(req, res) {
-	console.log('/process/formResponse 호출됨.');
-	var paramId = req.body.id || req.query.id;
-	var paramPassword = req.body.password || req.query.password;
-	if (req.session.user) {
-		res.redirect('/public/product.html');
-	} else {
-		// 세션 저장
-		req.session.user = {
-			id: paramId,
-			name: '이름',
-			authorized: true
-		};
-		res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-		res.write('<h1>로그인 성공</h1>');
-		res.write('<div><p>Param id : ' + paramId + '</p></div>');
-		res.write('<div><p>Param password : ' + paramPassword + '</p></div>');
-		res.write("<br><br><a href='/process/product'>상품 페이지로 이동하기</a>");
-		res.end();
-	}
-}); */
+
 app.listen(3000, function(){
     console.log('Conneted 3000 port!');
 });
