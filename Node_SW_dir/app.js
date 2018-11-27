@@ -174,12 +174,14 @@ app.post('/process/search_teacher', function(req, res){
 //교사 접수확인 사이트 끝
 
 //admin 사이트 시작
+/
 app.post('/process/admin', function(req, res){
         console.log('Access Admin Page');
         var paramPassword = req.body.password; //|| req.query.password;
         if( paramPassword != '2509' ){
                 res.send('틀린 비밀번호');
         } else {
+/*
                 var connection = mysql.createConnection({
                         host: 'localhost',
                         user: 'root',
@@ -199,10 +201,43 @@ app.post('/process/admin', function(req, res){
                 connection.query(sqls, function(err,rows, fields ){
                         if(err) { console.log(err) }
                         else    {
-                                console.log(sql);
+                                console.log(sqls);
                                 res.send(rows);
+
+                      */
+                      var connection = mysql.createConnection({
+                        host: 'localhost',
+                        user: 'root',
+                        password: 'ggok1234',
+                        database: 'myDB',
+                });
+                connection.connect();
+                var sql = "SELECT * FROM applicant";
+                connection.query(sql, function(err,rows, fields ){
+                        if(err) { console.log(err) }
+                        else    {
+                                console.log(sql);
+                                res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+                                res.write('<h1>관리자페이지</h1>');
+                                //res.write('<div><p>Param password : ' + paramPassword + '</p></div>');
+                                //res.write("<br><br><a href='/process/product'>상품 페이지로 이동하기</a>");
+
+                                for ( n = 0; n < rows.length ; n++) {
+                                        var l = [rows[n].id,rows[n].time,rows[n].name,rows[n].phone,rows[n].school,
+                                                rows[n].sw_education_exp,rows[n].coding_exp,rows[n].motivation];
+                                        res.write(l[0]+' / '+l[1]+' / '+l[2]+' / '+l[3]+' / '+l[4]+' / '+l[5]+' / '+l[6]+' / '+l[7]+' / '+'<br>');
+                                }
+                                res.end();
                         }
                 });
+                connection.end();
+
+
+
+                    }
+
+                });
+
 
                 connection.end();
         }
