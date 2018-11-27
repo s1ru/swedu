@@ -203,6 +203,13 @@ app.post('/process/admin', function(req, res){
                         else    {
                                 console.log(sqls);
                                 res.send(rows);
+                              }
+
+                              });
+
+
+                              connection.end();
+
 
                       */
                       var connection = mysql.createConnection({
@@ -234,12 +241,7 @@ app.post('/process/admin', function(req, res){
 
 
 
-                    }
 
-                });
-
-
-                connection.end();
         }
 });
 //admin 사이트 끝
